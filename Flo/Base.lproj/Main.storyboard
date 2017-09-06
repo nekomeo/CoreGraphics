@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H40-RF-POo" customClass="PushButtonView" customModule="Flo" customModuleProvider="target">
-                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="353.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="1a9-oV-QJA"/>
                                     <constraint firstAttribute="width" constant="100" id="AiI-Bz-s8P"/>
@@ -53,51 +53,80 @@
                                     <action selector="btnPushButtonWithButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yek-vx-g2i"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czZ-hT-ao5" customClass="CounterView" customModule="Flo" customModuleProvider="target">
-                                <rect key="frame" x="72.5" y="33.5" width="230" height="230"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ucN-Tm-PIF" userLabel="Container View">
+                                <rect key="frame" x="37.5" y="23.5" width="300" height="300"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dm8-0j-Hnl">
-                                        <rect key="frame" x="93" y="93" width="44" height="44"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="czZ-hT-ao5" customClass="CounterView" customModule="Flo" customModuleProvider="target">
+                                        <rect key="frame" x="34.5" y="34.5" width="230" height="230"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dm8-0j-Hnl">
+                                                <rect key="frame" x="93" y="93" width="44" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="230" id="CyE-Sr-r5r"/>
+                                            <constraint firstAttribute="height" constant="230" id="JJg-12-n9e"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                                <color key="value" red="0.3411764705882353" green="0.85490196078431369" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                                <color key="value" red="0.13333333333333333" green="0.43137254901960786" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="counter">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7e9-KC-Wvj" customClass="GraphView" customModule="Flo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="25" width="300" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="vxy-Wd-dNo" appends="YES" id="PFV-Gm-pho"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="CyE-Sr-r5r"/>
-                                    <constraint firstAttribute="height" constant="230" id="JJg-12-n9e"/>
+                                    <constraint firstAttribute="height" constant="300" id="1tw-Yd-qt0"/>
+                                    <constraint firstItem="czZ-hT-ao5" firstAttribute="centerX" secondItem="ucN-Tm-PIF" secondAttribute="centerX" id="fyO-bA-dir"/>
+                                    <constraint firstItem="czZ-hT-ao5" firstAttribute="centerY" secondItem="ucN-Tm-PIF" secondAttribute="centerY" id="qS8-4N-K1A"/>
+                                    <constraint firstAttribute="width" constant="300" id="wmb-EG-ALr"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
-                                        <color key="value" red="0.3411764705882353" green="0.85490196078431369" blue="0.83529411764705885" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                        <color key="value" red="0.13333333333333333" green="0.43137254901960786" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="counter">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="czZ-hT-ao5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8jv-C3-18O"/>
-                            <constraint firstItem="H40-RF-POo" firstAttribute="top" secondItem="czZ-hT-ao5" secondAttribute="bottom" constant="20" id="8pv-Yd-tv1"/>
                             <constraint firstItem="H40-RF-POo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="InI-0Z-viS"/>
+                            <constraint firstItem="ucN-Tm-PIF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-160" id="NBK-qs-t8r"/>
                             <constraint firstItem="Kvo-En-ZuT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a8h-Q6-HY1"/>
-                            <constraint firstItem="H40-RF-POo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fdQ-zx-CxO"/>
+                            <constraint firstItem="H40-RF-POo" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="70" id="fdQ-zx-CxO"/>
                             <constraint firstItem="Kvo-En-ZuT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="171.5" id="sX5-FR-5OO"/>
+                            <constraint firstItem="ucN-Tm-PIF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v8r-pu-CgU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="ucN-Tm-PIF" id="0pg-Ym-TLu"/>
                         <outlet property="counterLabel" destination="Dm8-0j-Hnl" id="oaB-EV-3xl"/>
                         <outlet property="counterView" destination="czZ-hT-ao5" id="8Ib-TK-AFO"/>
+                        <outlet property="graphView" destination="7e9-KC-Wvj" id="GIy-dP-IPf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vxy-Wd-dNo">
+                    <connections>
+                        <action selector="counterViewTapWithGesture:" destination="BYZ-38-t0r" id="qT3-As-6gd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>
